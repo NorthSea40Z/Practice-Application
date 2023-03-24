@@ -39,7 +39,11 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion '1.4.0'
+            // e: This version (1.2.0) of the Compose Compiler requires Kotlin version 1.7.0 but you
+            // appear to be using Kotlin version 1.8.0 which is not known to be compatible.  Please
+            // fix your configuration (or `suppressKotlinVersionCompatibilityCheck` but don't say I
+            // didn't warn you!).
     }
     packagingOptions {
         resources {
@@ -54,7 +58,8 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
     // To use Kotlin annotation processing tool (kapt)
-    kapt "androidx.room:room-compiler:$room_version"    // apply plugin: 'kotlin-kapt'
+//    kapt "androidx.room:room-compiler:$room_version"    // apply plugin: 'kotlin-kapt'
+        // kapt and ksp seems to be in conflict.
     // To use Kotlin Symbol Processing (KSP)
     ksp "androidx.room:room-compiler:$room_version" // classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0'
     // id 'com.google.devtools.ksp' version '1.8.0-1.0.8'
