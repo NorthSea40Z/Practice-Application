@@ -12,9 +12,11 @@ interface UserDaoImpl: UserDao {
 
     @Query("SELECT * FROM user WHERE uid IN (:userIds)")
     override fun loadAllByIds(userIds: IntArray): List<User>
+        // returns an empty list if there's no result
 
     @Query("SELECT * FROM user WHERE first_name LIKE :first AND last_name LIKE :last LIMIT 1")
     override fun findByName(first: String, last: String): User
+        // returns NULL if there's no result
 
     @Insert
     override fun insertAll(vararg users: User)
