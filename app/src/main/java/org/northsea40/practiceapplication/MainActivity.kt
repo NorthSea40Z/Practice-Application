@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {    // Step 1
-            PracticeApplicationTheme {
+            PracticeApplicationTheme {  // step M01 (Material Design)
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -30,7 +30,8 @@ class MainActivity : ComponentActivity() {
 //                    Greeting("Android")     // step 2
                     MessageCard(Message("Android", "Jetpack Compose"))  // step 6
                 }
-            }
+            }   // Material Design is built around three pillars:
+                // Color, Typography, and Shape.
         }
     }
 }
