@@ -1,7 +1,6 @@
 package org.northsea40.practiceapplication.ViewModel
 
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.test.*
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
@@ -18,7 +17,7 @@ class MainViewModelImplTest {
     @Before
     fun setUp() {
         Dispatchers.setMain(ioThreadSurrogate)
-        mainViewModel = MainViewModelImpl(MockUserDao())
+        mainViewModel = MainViewModel(MockUserDao())
     }
 
     @After
